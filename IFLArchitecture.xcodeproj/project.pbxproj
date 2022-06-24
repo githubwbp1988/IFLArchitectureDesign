@@ -1,0 +1,484 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		20479430286493E900D58560 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2047942F286493E900D58560 /* AppDelegate.m */; };
+		20479433286493E900D58560 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 20479432286493E900D58560 /* SceneDelegate.m */; };
+		20479436286493E900D58560 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20479435286493E900D58560 /* ViewController.m */; };
+		20479439286493E900D58560 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20479437286493E900D58560 /* Main.storyboard */; };
+		2047943B286493EA00D58560 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2047943A286493EA00D58560 /* Assets.xcassets */; };
+		2047943E286493EA00D58560 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2047943C286493EA00D58560 /* LaunchScreen.storyboard */; };
+		20479441286493EA00D58560 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 20479440286493EA00D58560 /* main.m */; };
+		2047944C2864985C00D58560 /* IFLMVCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2047944B2864985C00D58560 /* IFLMVCViewController.m */; };
+		2047944F2864986D00D58560 /* IFLMVPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2047944E2864986D00D58560 /* IFLMVPViewController.m */; };
+		204794522864987E00D58560 /* IFLMVVMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 204794512864987E00D58560 /* IFLMVVMViewController.m */; };
+		204794552864AE5800D58560 /* IFLPlusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 204794542864AE5800D58560 /* IFLPlusCell.m */; };
+		204794582864B70F00D58560 /* IFLCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 204794572864B70F00D58560 /* IFLCellModel.m */; };
+		2047945B2864B79A00D58560 /* IFLPresent.m in Sources */ = {isa = PBXBuildFile; fileRef = 2047945A2864B79A00D58560 /* IFLPresent.m */; };
+		2047945F2864DAC000D58560 /* IFLDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2047945E2864DAC000D58560 /* IFLDataSource.m */; };
+		204794622865EBD900D58560 /* IFLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 204794612865EBD900D58560 /* IFLView.m */; };
+		B4F53D49237063F1D2C1E079 /* Pods_IFLArchitecture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 132F2B336B90D7CA9E5B1ED5 /* Pods_IFLArchitecture.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		132F2B336B90D7CA9E5B1ED5 /* Pods_IFLArchitecture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IFLArchitecture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2047942B286493E900D58560 /* IFLArchitecture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IFLArchitecture.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2047942E286493E900D58560 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		2047942F286493E900D58560 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		20479431286493E900D58560 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		20479432286493E900D58560 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		20479434286493E900D58560 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		20479435286493E900D58560 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		20479438286493E900D58560 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2047943A286493EA00D58560 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2047943D286493EA00D58560 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2047943F286493EA00D58560 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		20479440286493EA00D58560 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2047944A2864985C00D58560 /* IFLMVCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFLMVCViewController.h; sourceTree = "<group>"; };
+		2047944B2864985C00D58560 /* IFLMVCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IFLMVCViewController.m; sourceTree = "<group>"; };
+		2047944D2864986D00D58560 /* IFLMVPViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFLMVPViewController.h; sourceTree = "<group>"; };
+		2047944E2864986D00D58560 /* IFLMVPViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IFLMVPViewController.m; sourceTree = "<group>"; };
+		204794502864987E00D58560 /* IFLMVVMViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFLMVVMViewController.h; sourceTree = "<group>"; };
+		204794512864987E00D58560 /* IFLMVVMViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IFLMVVMViewController.m; sourceTree = "<group>"; };
+		204794532864AE5800D58560 /* IFLPlusCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFLPlusCell.h; sourceTree = "<group>"; };
+		204794542864AE5800D58560 /* IFLPlusCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IFLPlusCell.m; sourceTree = "<group>"; };
+		204794562864B70F00D58560 /* IFLCellModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFLCellModel.h; sourceTree = "<group>"; };
+		204794572864B70F00D58560 /* IFLCellModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IFLCellModel.m; sourceTree = "<group>"; };
+		204794592864B79A00D58560 /* IFLPresent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFLPresent.h; sourceTree = "<group>"; };
+		2047945A2864B79A00D58560 /* IFLPresent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IFLPresent.m; sourceTree = "<group>"; };
+		2047945D2864DAC000D58560 /* IFLDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFLDataSource.h; sourceTree = "<group>"; };
+		2047945E2864DAC000D58560 /* IFLDataSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IFLDataSource.m; sourceTree = "<group>"; };
+		204794602865EBD900D58560 /* IFLView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFLView.h; sourceTree = "<group>"; };
+		204794612865EBD900D58560 /* IFLView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IFLView.m; sourceTree = "<group>"; };
+		8ACF6C0B04178F9D6E20BA18 /* Pods-IFLArchitecture.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IFLArchitecture.release.xcconfig"; path = "Target Support Files/Pods-IFLArchitecture/Pods-IFLArchitecture.release.xcconfig"; sourceTree = "<group>"; };
+		DAFF52EAC65E5E5F74CA6DAE /* Pods-IFLArchitecture.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IFLArchitecture.debug.xcconfig"; path = "Target Support Files/Pods-IFLArchitecture/Pods-IFLArchitecture.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		20479428286493E900D58560 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B4F53D49237063F1D2C1E079 /* Pods_IFLArchitecture.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		20479422286493E900D58560 = {
+			isa = PBXGroup;
+			children = (
+				2047942D286493E900D58560 /* IFLArchitecture */,
+				2047942C286493E900D58560 /* Products */,
+				D2AF12C0BD31DEC13CB930CC /* Pods */,
+				98E4690804D7BC477AFD3025 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		2047942C286493E900D58560 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2047942B286493E900D58560 /* IFLArchitecture.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2047942D286493E900D58560 /* IFLArchitecture */ = {
+			isa = PBXGroup;
+			children = (
+				2047944A2864985C00D58560 /* IFLMVCViewController.h */,
+				2047944B2864985C00D58560 /* IFLMVCViewController.m */,
+				204794602865EBD900D58560 /* IFLView.h */,
+				204794612865EBD900D58560 /* IFLView.m */,
+				2047945D2864DAC000D58560 /* IFLDataSource.h */,
+				2047945E2864DAC000D58560 /* IFLDataSource.m */,
+				204794532864AE5800D58560 /* IFLPlusCell.h */,
+				204794542864AE5800D58560 /* IFLPlusCell.m */,
+				204794562864B70F00D58560 /* IFLCellModel.h */,
+				204794572864B70F00D58560 /* IFLCellModel.m */,
+				204794592864B79A00D58560 /* IFLPresent.h */,
+				2047945A2864B79A00D58560 /* IFLPresent.m */,
+				2047942E286493E900D58560 /* AppDelegate.h */,
+				2047942F286493E900D58560 /* AppDelegate.m */,
+				20479431286493E900D58560 /* SceneDelegate.h */,
+				20479432286493E900D58560 /* SceneDelegate.m */,
+				20479434286493E900D58560 /* ViewController.h */,
+				20479435286493E900D58560 /* ViewController.m */,
+				20479437286493E900D58560 /* Main.storyboard */,
+				2047943A286493EA00D58560 /* Assets.xcassets */,
+				2047943C286493EA00D58560 /* LaunchScreen.storyboard */,
+				2047943F286493EA00D58560 /* Info.plist */,
+				20479440286493EA00D58560 /* main.m */,
+				2047944D2864986D00D58560 /* IFLMVPViewController.h */,
+				2047944E2864986D00D58560 /* IFLMVPViewController.m */,
+				204794502864987E00D58560 /* IFLMVVMViewController.h */,
+				204794512864987E00D58560 /* IFLMVVMViewController.m */,
+			);
+			path = IFLArchitecture;
+			sourceTree = "<group>";
+		};
+		98E4690804D7BC477AFD3025 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				132F2B336B90D7CA9E5B1ED5 /* Pods_IFLArchitecture.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D2AF12C0BD31DEC13CB930CC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DAFF52EAC65E5E5F74CA6DAE /* Pods-IFLArchitecture.debug.xcconfig */,
+				8ACF6C0B04178F9D6E20BA18 /* Pods-IFLArchitecture.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2047942A286493E900D58560 /* IFLArchitecture */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 20479444286493EA00D58560 /* Build configuration list for PBXNativeTarget "IFLArchitecture" */;
+			buildPhases = (
+				04AC423FC1632612F5A9C16E /* [CP] Check Pods Manifest.lock */,
+				20479427286493E900D58560 /* Sources */,
+				20479428286493E900D58560 /* Frameworks */,
+				20479429286493E900D58560 /* Resources */,
+				D547BF13F2703EAAD4C9EF32 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = IFLArchitecture;
+			productName = IFLArchitecture;
+			productReference = 2047942B286493E900D58560 /* IFLArchitecture.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		20479423286493E900D58560 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1330;
+				TargetAttributes = {
+					2047942A286493E900D58560 = {
+						CreatedOnToolsVersion = 13.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 20479426286493E900D58560 /* Build configuration list for PBXProject "IFLArchitecture" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 20479422286493E900D58560;
+			productRefGroup = 2047942C286493E900D58560 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2047942A286493E900D58560 /* IFLArchitecture */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		20479429286493E900D58560 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2047943E286493EA00D58560 /* LaunchScreen.storyboard in Resources */,
+				2047943B286493EA00D58560 /* Assets.xcassets in Resources */,
+				20479439286493E900D58560 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		04AC423FC1632612F5A9C16E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-IFLArchitecture-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D547BF13F2703EAAD4C9EF32 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IFLArchitecture/Pods-IFLArchitecture-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IFLArchitecture/Pods-IFLArchitecture-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-IFLArchitecture/Pods-IFLArchitecture-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		20479427286493E900D58560 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20479436286493E900D58560 /* ViewController.m in Sources */,
+				2047945B2864B79A00D58560 /* IFLPresent.m in Sources */,
+				204794522864987E00D58560 /* IFLMVVMViewController.m in Sources */,
+				204794582864B70F00D58560 /* IFLCellModel.m in Sources */,
+				20479430286493E900D58560 /* AppDelegate.m in Sources */,
+				2047944C2864985C00D58560 /* IFLMVCViewController.m in Sources */,
+				20479441286493EA00D58560 /* main.m in Sources */,
+				2047945F2864DAC000D58560 /* IFLDataSource.m in Sources */,
+				2047944F2864986D00D58560 /* IFLMVPViewController.m in Sources */,
+				20479433286493E900D58560 /* SceneDelegate.m in Sources */,
+				204794622865EBD900D58560 /* IFLView.m in Sources */,
+				204794552864AE5800D58560 /* IFLPlusCell.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		20479437286493E900D58560 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				20479438286493E900D58560 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		2047943C286493EA00D58560 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2047943D286493EA00D58560 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		20479442286493EA00D58560 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		20479443286493EA00D58560 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		20479445286493EA00D58560 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DAFF52EAC65E5E5F74CA6DAE /* Pods-IFLArchitecture.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = T4WCYCBLB7;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = IFLArchitecture/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.iflamer.fork.IFLArchitecture;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		20479446286493EA00D58560 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8ACF6C0B04178F9D6E20BA18 /* Pods-IFLArchitecture.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = T4WCYCBLB7;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = IFLArchitecture/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.iflamer.fork.IFLArchitecture;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		20479426286493E900D58560 /* Build configuration list for PBXProject "IFLArchitecture" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				20479442286493EA00D58560 /* Debug */,
+				20479443286493EA00D58560 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		20479444286493EA00D58560 /* Build configuration list for PBXNativeTarget "IFLArchitecture" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				20479445286493EA00D58560 /* Debug */,
+				20479446286493EA00D58560 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 20479423286493E900D58560 /* Project object */;
+}

@@ -1,0 +1,6 @@
+framework module Pods_IFLArchitecture {
+  umbrella header "Pods-IFLArchitecture-umbrella.h"
+
+  export *
+  module * { export * }
+}

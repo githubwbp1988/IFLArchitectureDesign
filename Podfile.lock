@@ -1,0 +1,38 @@
+PODS:
+  - AFNetworking (4.0.1):
+    - AFNetworking/NSURLSession (= 4.0.1)
+    - AFNetworking/Reachability (= 4.0.1)
+    - AFNetworking/Security (= 4.0.1)
+    - AFNetworking/Serialization (= 4.0.1)
+    - AFNetworking/UIKit (= 4.0.1)
+  - AFNetworking/NSURLSession (4.0.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (4.0.1)
+  - AFNetworking/Security (4.0.1)
+  - AFNetworking/Serialization (4.0.1)
+  - AFNetworking/UIKit (4.0.1):
+    - AFNetworking/NSURLSession
+  - Masonry (1.1.0)
+  - YYAsyncLayer (1.0)
+
+DEPENDENCIES:
+  - AFNetworking
+  - Masonry
+  - YYAsyncLayer
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - AFNetworking
+    - Masonry
+    - YYAsyncLayer
+
+SPEC CHECKSUMS:
+  AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  YYAsyncLayer: df6b01ebc695c5f6b4c15dd5c23fa3e081eb25c0
+
+PODFILE CHECKSUM: c226e33faa45870f20147f2c0ecad47c716c82af
+
+COCOAPODS: 1.11.3
