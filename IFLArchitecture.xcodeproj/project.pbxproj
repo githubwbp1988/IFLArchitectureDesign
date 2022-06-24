@@ -92,18 +92,7 @@
 		2047942D286493E900D58560 /* IFLArchitecture */ = {
 			isa = PBXGroup;
 			children = (
-				2047944A2864985C00D58560 /* IFLMVCViewController.h */,
-				2047944B2864985C00D58560 /* IFLMVCViewController.m */,
-				204794602865EBD900D58560 /* IFLView.h */,
-				204794612865EBD900D58560 /* IFLView.m */,
-				2047945D2864DAC000D58560 /* IFLDataSource.h */,
-				2047945E2864DAC000D58560 /* IFLDataSource.m */,
-				204794532864AE5800D58560 /* IFLPlusCell.h */,
-				204794542864AE5800D58560 /* IFLPlusCell.m */,
-				204794562864B70F00D58560 /* IFLCellModel.h */,
-				204794572864B70F00D58560 /* IFLCellModel.m */,
-				204794592864B79A00D58560 /* IFLPresent.h */,
-				2047945A2864B79A00D58560 /* IFLPresent.m */,
+				2047946328660A5200D58560 /* mvc */,
 				2047942E286493E900D58560 /* AppDelegate.h */,
 				2047942F286493E900D58560 /* AppDelegate.m */,
 				20479431286493E900D58560 /* SceneDelegate.h */,
@@ -121,6 +110,25 @@
 				204794512864987E00D58560 /* IFLMVVMViewController.m */,
 			);
 			path = IFLArchitecture;
+			sourceTree = "<group>";
+		};
+		2047946328660A5200D58560 /* mvc */ = {
+			isa = PBXGroup;
+			children = (
+				2047944A2864985C00D58560 /* IFLMVCViewController.h */,
+				2047944B2864985C00D58560 /* IFLMVCViewController.m */,
+				204794602865EBD900D58560 /* IFLView.h */,
+				204794612865EBD900D58560 /* IFLView.m */,
+				2047945D2864DAC000D58560 /* IFLDataSource.h */,
+				2047945E2864DAC000D58560 /* IFLDataSource.m */,
+				204794532864AE5800D58560 /* IFLPlusCell.h */,
+				204794542864AE5800D58560 /* IFLPlusCell.m */,
+				204794562864B70F00D58560 /* IFLCellModel.h */,
+				204794572864B70F00D58560 /* IFLCellModel.m */,
+				204794592864B79A00D58560 /* IFLPresent.h */,
+				2047945A2864B79A00D58560 /* IFLPresent.m */,
+			);
+			path = mvc;
 			sourceTree = "<group>";
 		};
 		98E4690804D7BC477AFD3025 /* Frameworks */ = {
