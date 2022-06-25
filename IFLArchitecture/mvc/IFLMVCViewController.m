@@ -13,7 +13,7 @@
 
 static NSString *const cellReuseIdentifier = @"cellReuseIdentifier_IFLPlusCell";
 
-@interface IFLMVCViewController ()
+@interface IFLMVCViewController () <IFLPresentDelegate>
 
 @property (nonatomic, strong)UITableView *tableView;
 @property (nonatomic, strong)IFLPresent *present;
@@ -30,7 +30,7 @@ static NSString *const cellReuseIdentifier = @"cellReuseIdentifier_IFLPlusCell";
     [super viewDidLoad];
     
     
-    self.present = [[IFLPresent alloc] init];
+    self.present = [[IFLPresent alloc] initWithDelegate:self];
     __weak typeof(self) weakSelf = self;
     self.datasource = [[IFLDataSource alloc] initWithCellReuseIdentifier:cellReuseIdentifier withConfigCellBlock:^(IFLPlusCell *cell,
                                                                                                                    IFLCellModel *model, NSIndexPath * _Nonnull indexPath) {
@@ -41,7 +41,6 @@ static NSString *const cellReuseIdentifier = @"cellReuseIdentifier_IFLPlusCell";
             return [weakSelf.present operate:opt indexPath:indexPath];
         };
     }];
-    [self.datasource configData:self.present.dataArray];
     
     self.view = self.m_view;
 }
@@ -65,6 +64,11 @@ static NSString *const cellReuseIdentifier = @"cellReuseIdentifier_IFLPlusCell";
     // Pass the selected object to the new view controller.
 }
 */
+
+- (void)loadDataSuccess {
+    [self.datasource configData:self.present.dataArray];
+    [self.m_view reload];
+}
 
 - (void)dealloc {
     NSLog(@" --- %s ---- ", __func__);

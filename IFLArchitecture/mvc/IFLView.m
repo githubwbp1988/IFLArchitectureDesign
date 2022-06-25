@@ -20,6 +20,10 @@
     return self;
 }
 
+- (void)reload {
+    [self.tableView reloadData];
+}
+
 - (void)configTable:(NSString *)cellReuseIdentifier {
     self.tableView =  [[UITableView alloc] initWithFrame:self.bounds style:UITableViewStylePlain];
     [self addSubview:self.tableView];

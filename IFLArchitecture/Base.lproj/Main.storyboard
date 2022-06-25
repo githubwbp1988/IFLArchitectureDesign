@@ -32,11 +32,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="MVVM"/>
-                                <connections>
-                                    <segue destination="G1D-Iu-yVx" kind="popoverPresentation" popoverAnchorView="mYg-K5-cLI" id="3Mn-NR-LKy">
-                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                    </segue>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AHg-ew-ecf">
                                 <rect key="frame" x="89" y="332" width="237" height="31"/>
@@ -44,7 +39,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="MVP"/>
                                 <connections>
-                                    <segue destination="DyB-Su-6Lm" kind="popoverPresentation" popoverAnchorView="AHg-ew-ecf" id="cQg-19-hu4">
+                                    <segue destination="DyB-Su-6Lm" kind="popoverPresentation" popoverAnchorView="AHg-ew-ecf" id="sKa-aG-e33">
                                         <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                     </segue>
                                 </connections>
@@ -93,7 +88,7 @@
             <objects>
                 <viewController id="G1D-Iu-yVx" customClass="IFLMVVMViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jrn-Ou-RP1">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="KQr-nn-VOw"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -101,7 +96,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UZa-hk-7S8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1964" y="44"/>
+            <point key="canvasLocation" x="2149" y="7"/>
         </scene>
     </scenes>
     <resources>

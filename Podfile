@@ -8,6 +8,7 @@ target 'IFLArchitecture' do
 
   # Pods for IFLArchitecture
 #  pod 'YYKit'
+  pod 'YYModel'
   pod 'Masonry'
   pod 'AFNetworking'
   pod 'YYAsyncLayer'

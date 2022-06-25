@@ -20,6 +20,8 @@ typedef id<UITableViewDataSource> _Nonnull (^DataSourceBlock)(void);
           cellReuseIdentifier:(NSString *)cellReuseIdentifier
               dataSourceBlock:(DataSourceBlock)dataSourceBlock;
 
+- (void)reload;
+
 
 @end
 

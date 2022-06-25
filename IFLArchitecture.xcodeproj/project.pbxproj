@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		203319D5286737D700F046E5 /* IFLListAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 203319D4286737D700F046E5 /* IFLListAdapter.m */; };
 		20479430286493E900D58560 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2047942F286493E900D58560 /* AppDelegate.m */; };
 		20479433286493E900D58560 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 20479432286493E900D58560 /* SceneDelegate.m */; };
 		20479436286493E900D58560 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20479435286493E900D58560 /* ViewController.m */; };
@@ -22,11 +23,27 @@
 		2047945B2864B79A00D58560 /* IFLPresent.m in Sources */ = {isa = PBXBuildFile; fileRef = 2047945A2864B79A00D58560 /* IFLPresent.m */; };
 		2047945F2864DAC000D58560 /* IFLDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2047945E2864DAC000D58560 /* IFLDataSource.m */; };
 		204794622865EBD900D58560 /* IFLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 204794612865EBD900D58560 /* IFLView.m */; };
+		204794702866164C00D58560 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 204794692866164C00D58560 /* Reachability.m */; };
+		204794712866164C00D58560 /* HttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 2047946A2866164C00D58560 /* HttpClient.m */; };
+		204794722866164C00D58560 /* HttpPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2047946F2866164C00D58560 /* HttpPresenter.m */; };
+		204794752866173000D58560 /* IFLPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 204794742866173000D58560 /* IFLPresenter.m */; };
+		2047947928661C9600D58560 /* IFLMVPPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2047947828661C9600D58560 /* IFLMVPPresenter.m */; };
+		2047947F28661DEF00D58560 /* IFLMVPModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2047947E28661DEF00D58560 /* IFLMVPModel.m */; };
+		20479483286638C900D58560 /* IFLBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20479482286638C900D58560 /* IFLBaseViewController.m */; };
+		204794872866393300D58560 /* IFLContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 204794862866393300D58560 /* IFLContext.m */; };
+		2047948A286639A900D58560 /* NSObject+IFLC.m in Sources */ = {isa = PBXBuildFile; fileRef = 20479489286639A900D58560 /* NSObject+IFLC.m */; };
+		20479490286709BF00D58560 /* IFLListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2047948F286709BF00D58560 /* IFLListView.m */; };
+		2047949328670A3C00D58560 /* IFLBasePresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2047949228670A3C00D58560 /* IFLBasePresenter.m */; };
+		204794962867115100D58560 /* IFLListPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 204794952867115100D58560 /* IFLListPresenter.m */; };
+		2047949B2867290800D58560 /* IFLBaseAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2047949A2867290800D58560 /* IFLBaseAdapter.m */; };
+		2047949E28672D7800D58560 /* IFLListInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2047949D28672D7800D58560 /* IFLListInteractor.m */; };
 		B4F53D49237063F1D2C1E079 /* Pods_IFLArchitecture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 132F2B336B90D7CA9E5B1ED5 /* Pods_IFLArchitecture.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		132F2B336B90D7CA9E5B1ED5 /* Pods_IFLArchitecture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IFLArchitecture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		203319D3286737D700F046E5 /* IFLListAdapter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFLListAdapter.h; sourceTree = "<group>"; };
+		203319D4286737D700F046E5 /* IFLListAdapter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IFLListAdapter.m; sourceTree = "<group>"; };
 		2047942B286493E900D58560 /* IFLArchitecture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IFLArchitecture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2047942E286493E900D58560 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2047942F286493E900D58560 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -55,6 +72,37 @@
 		2047945E2864DAC000D58560 /* IFLDataSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IFLDataSource.m; sourceTree = "<group>"; };
 		204794602865EBD900D58560 /* IFLView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFLView.h; sourceTree = "<group>"; };
 		204794612865EBD900D58560 /* IFLView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IFLView.m; sourceTree = "<group>"; };
+		204794692866164C00D58560 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		2047946A2866164C00D58560 /* HttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpClient.m; sourceTree = "<group>"; };
+		2047946B2866164C00D58560 /* HttpPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpPresenter.h; sourceTree = "<group>"; };
+		2047946C2866164C00D58560 /* HttpResponseHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpResponseHandle.h; sourceTree = "<group>"; };
+		2047946D2866164C00D58560 /* HttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpClient.h; sourceTree = "<group>"; };
+		2047946E2866164C00D58560 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		2047946F2866164C00D58560 /* HttpPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpPresenter.m; sourceTree = "<group>"; };
+		204794732866173000D58560 /* IFLPresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFLPresenter.h; sourceTree = "<group>"; };
+		204794742866173000D58560 /* IFLPresenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IFLPresenter.m; sourceTree = "<group>"; };
+		2047947728661C9600D58560 /* IFLMVPPresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFLMVPPresenter.h; sourceTree = "<group>"; };
+		2047947828661C9600D58560 /* IFLMVPPresenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IFLMVPPresenter.m; sourceTree = "<group>"; };
+		2047947B28661D4F00D58560 /* IFLViewProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFLViewProtocol.h; sourceTree = "<group>"; };
+		2047947D28661DEF00D58560 /* IFLMVPModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFLMVPModel.h; sourceTree = "<group>"; };
+		2047947E28661DEF00D58560 /* IFLMVPModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IFLMVPModel.m; sourceTree = "<group>"; };
+		20479481286638C900D58560 /* IFLBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFLBaseViewController.h; sourceTree = "<group>"; };
+		20479482286638C900D58560 /* IFLBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IFLBaseViewController.m; sourceTree = "<group>"; };
+		204794852866393300D58560 /* IFLContext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFLContext.h; sourceTree = "<group>"; };
+		204794862866393300D58560 /* IFLContext.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IFLContext.m; sourceTree = "<group>"; };
+		20479488286639A900D58560 /* NSObject+IFLC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+IFLC.h"; sourceTree = "<group>"; };
+		20479489286639A900D58560 /* NSObject+IFLC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+IFLC.m"; sourceTree = "<group>"; };
+		2047948E286709BF00D58560 /* IFLListView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFLListView.h; sourceTree = "<group>"; };
+		2047948F286709BF00D58560 /* IFLListView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IFLListView.m; sourceTree = "<group>"; };
+		2047949128670A3C00D58560 /* IFLBasePresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFLBasePresenter.h; sourceTree = "<group>"; };
+		2047949228670A3C00D58560 /* IFLBasePresenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IFLBasePresenter.m; sourceTree = "<group>"; };
+		204794942867115100D58560 /* IFLListPresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFLListPresenter.h; sourceTree = "<group>"; };
+		204794952867115100D58560 /* IFLListPresenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IFLListPresenter.m; sourceTree = "<group>"; };
+		204794982867125300D58560 /* IFLCommMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFLCommMacro.h; sourceTree = "<group>"; };
+		204794992867290800D58560 /* IFLBaseAdapter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFLBaseAdapter.h; sourceTree = "<group>"; };
+		2047949A2867290800D58560 /* IFLBaseAdapter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IFLBaseAdapter.m; sourceTree = "<group>"; };
+		2047949C28672D7800D58560 /* IFLListInteractor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFLListInteractor.h; sourceTree = "<group>"; };
+		2047949D28672D7800D58560 /* IFLListInteractor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IFLListInteractor.m; sourceTree = "<group>"; };
 		8ACF6C0B04178F9D6E20BA18 /* Pods-IFLArchitecture.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IFLArchitecture.release.xcconfig"; path = "Target Support Files/Pods-IFLArchitecture/Pods-IFLArchitecture.release.xcconfig"; sourceTree = "<group>"; };
 		DAFF52EAC65E5E5F74CA6DAE /* Pods-IFLArchitecture.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IFLArchitecture.debug.xcconfig"; path = "Target Support Files/Pods-IFLArchitecture/Pods-IFLArchitecture.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -71,6 +119,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		203319D2286737BB00F046E5 /* adapter */ = {
+			isa = PBXGroup;
+			children = (
+				203319D3286737D700F046E5 /* IFLListAdapter.h */,
+				203319D4286737D700F046E5 /* IFLListAdapter.m */,
+			);
+			path = adapter;
+			sourceTree = "<group>";
+		};
 		20479422286493E900D58560 = {
 			isa = PBXGroup;
 			children = (
@@ -92,6 +149,7 @@
 		2047942D286493E900D58560 /* IFLArchitecture */ = {
 			isa = PBXGroup;
 			children = (
+				204794682866164C00D58560 /* net */,
 				2047946428660AB300D58560 /* mvp */,
 				2047946328660A5200D58560 /* mvc */,
 				2047942E286493E900D58560 /* AppDelegate.h */,
@@ -105,8 +163,6 @@
 				2047943C286493EA00D58560 /* LaunchScreen.storyboard */,
 				2047943F286493EA00D58560 /* Info.plist */,
 				20479440286493EA00D58560 /* main.m */,
-				2047944D2864986D00D58560 /* IFLMVPViewController.h */,
-				2047944E2864986D00D58560 /* IFLMVPViewController.m */,
 				204794502864987E00D58560 /* IFLMVVMViewController.h */,
 				204794512864987E00D58560 /* IFLMVVMViewController.m */,
 			);
@@ -135,8 +191,121 @@
 		2047946428660AB300D58560 /* mvp */ = {
 			isa = PBXGroup;
 			children = (
+				204794972867123900D58560 /* common */,
+				20479484286638FF00D58560 /* context */,
+				20479480286636AB00D58560 /* base */,
+				2047947C28661DCD00D58560 /* model */,
+				2047948C2867093300D58560 /* interactor */,
+				2047947A28661CE100D58560 /* view */,
+				203319D2286737BB00F046E5 /* adapter */,
+				204794762866174000D58560 /* present */,
 			);
 			path = mvp;
+			sourceTree = "<group>";
+		};
+		204794682866164C00D58560 /* net */ = {
+			isa = PBXGroup;
+			children = (
+				2047946C2866164C00D58560 /* HttpResponseHandle.h */,
+				2047946E2866164C00D58560 /* Reachability.h */,
+				204794692866164C00D58560 /* Reachability.m */,
+				2047946D2866164C00D58560 /* HttpClient.h */,
+				2047946A2866164C00D58560 /* HttpClient.m */,
+				2047946B2866164C00D58560 /* HttpPresenter.h */,
+				2047946F2866164C00D58560 /* HttpPresenter.m */,
+			);
+			path = net;
+			sourceTree = "<group>";
+		};
+		204794762866174000D58560 /* present */ = {
+			isa = PBXGroup;
+			children = (
+				2047948B286708DD00D58560 /* expire */,
+				204794942867115100D58560 /* IFLListPresenter.h */,
+				204794952867115100D58560 /* IFLListPresenter.m */,
+			);
+			path = present;
+			sourceTree = "<group>";
+		};
+		2047947A28661CE100D58560 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				2047948D2867097B00D58560 /* expire */,
+				2047944D2864986D00D58560 /* IFLMVPViewController.h */,
+				2047944E2864986D00D58560 /* IFLMVPViewController.m */,
+				2047948E286709BF00D58560 /* IFLListView.h */,
+				2047948F286709BF00D58560 /* IFLListView.m */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		2047947C28661DCD00D58560 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				2047947D28661DEF00D58560 /* IFLMVPModel.h */,
+				2047947E28661DEF00D58560 /* IFLMVPModel.m */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		20479480286636AB00D58560 /* base */ = {
+			isa = PBXGroup;
+			children = (
+				20479481286638C900D58560 /* IFLBaseViewController.h */,
+				20479482286638C900D58560 /* IFLBaseViewController.m */,
+				2047949128670A3C00D58560 /* IFLBasePresenter.h */,
+				2047949228670A3C00D58560 /* IFLBasePresenter.m */,
+				204794992867290800D58560 /* IFLBaseAdapter.h */,
+				2047949A2867290800D58560 /* IFLBaseAdapter.m */,
+			);
+			path = base;
+			sourceTree = "<group>";
+		};
+		20479484286638FF00D58560 /* context */ = {
+			isa = PBXGroup;
+			children = (
+				204794852866393300D58560 /* IFLContext.h */,
+				204794862866393300D58560 /* IFLContext.m */,
+				20479488286639A900D58560 /* NSObject+IFLC.h */,
+				20479489286639A900D58560 /* NSObject+IFLC.m */,
+			);
+			path = context;
+			sourceTree = "<group>";
+		};
+		2047948B286708DD00D58560 /* expire */ = {
+			isa = PBXGroup;
+			children = (
+				204794732866173000D58560 /* IFLPresenter.h */,
+				204794742866173000D58560 /* IFLPresenter.m */,
+				2047947728661C9600D58560 /* IFLMVPPresenter.h */,
+				2047947828661C9600D58560 /* IFLMVPPresenter.m */,
+			);
+			path = expire;
+			sourceTree = "<group>";
+		};
+		2047948C2867093300D58560 /* interactor */ = {
+			isa = PBXGroup;
+			children = (
+				2047949C28672D7800D58560 /* IFLListInteractor.h */,
+				2047949D28672D7800D58560 /* IFLListInteractor.m */,
+			);
+			path = interactor;
+			sourceTree = "<group>";
+		};
+		2047948D2867097B00D58560 /* expire */ = {
+			isa = PBXGroup;
+			children = (
+				2047947B28661D4F00D58560 /* IFLViewProtocol.h */,
+			);
+			path = expire;
+			sourceTree = "<group>";
+		};
+		204794972867123900D58560 /* common */ = {
+			isa = PBXGroup;
+			children = (
+				204794982867125300D58560 /* IFLCommMacro.h */,
+			);
+			path = common;
 			sourceTree = "<group>";
 		};
 		98E4690804D7BC477AFD3025 /* Frameworks */ = {
@@ -270,17 +439,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2047949328670A3C00D58560 /* IFLBasePresenter.m in Sources */,
+				204794702866164C00D58560 /* Reachability.m in Sources */,
 				20479436286493E900D58560 /* ViewController.m in Sources */,
+				20479490286709BF00D58560 /* IFLListView.m in Sources */,
+				204794962867115100D58560 /* IFLListPresenter.m in Sources */,
 				2047945B2864B79A00D58560 /* IFLPresent.m in Sources */,
 				204794522864987E00D58560 /* IFLMVVMViewController.m in Sources */,
 				204794582864B70F00D58560 /* IFLCellModel.m in Sources */,
 				20479430286493E900D58560 /* AppDelegate.m in Sources */,
+				2047947928661C9600D58560 /* IFLMVPPresenter.m in Sources */,
+				203319D5286737D700F046E5 /* IFLListAdapter.m in Sources */,
 				2047944C2864985C00D58560 /* IFLMVCViewController.m in Sources */,
 				20479441286493EA00D58560 /* main.m in Sources */,
+				204794722866164C00D58560 /* HttpPresenter.m in Sources */,
 				2047945F2864DAC000D58560 /* IFLDataSource.m in Sources */,
+				2047949E28672D7800D58560 /* IFLListInteractor.m in Sources */,
+				2047947F28661DEF00D58560 /* IFLMVPModel.m in Sources */,
 				2047944F2864986D00D58560 /* IFLMVPViewController.m in Sources */,
+				2047948A286639A900D58560 /* NSObject+IFLC.m in Sources */,
 				20479433286493E900D58560 /* SceneDelegate.m in Sources */,
+				204794752866173000D58560 /* IFLPresenter.m in Sources */,
+				204794872866393300D58560 /* IFLContext.m in Sources */,
+				20479483286638C900D58560 /* IFLBaseViewController.m in Sources */,
 				204794622865EBD900D58560 /* IFLView.m in Sources */,
+				2047949B2867290800D58560 /* IFLBaseAdapter.m in Sources */,
+				204794712866164C00D58560 /* HttpClient.m in Sources */,
 				204794552864AE5800D58560 /* IFLPlusCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
