@@ -117,10 +117,125 @@ datasource抽离之后，目前视图是正常的
 
 # MVP模式
 
-见（二）尽快更文
+
 
 文中涉及demo下载地址 [github](https://github.com/githubwbp1988/IFLArchitectureDesign)
 
 
+
+# 从MVC基础上稍微演化一下
+
+> ![image.png](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/822602e06c154a25bea2ea2d5a11b8fd~tplv-k3u1fbpfcp-watermark.image?)
+
+
+> ![image.png](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b5879b57e49940b081a599052dcd2347~tplv-k3u1fbpfcp-watermark.image?)
+
+> ![image.png](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/8cb4aa057a504cffa2c4052449effcb0~tplv-k3u1fbpfcp-watermark.image?)
+
+> ![image.png](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/99dc3031c81a4709b8783e265790fb28~tplv-k3u1fbpfcp-watermark.image?)
+
+
+与上篇文章MVC有些许的不一样，首先原来的controller弱化，由presenter来驱动，其实就是代理的驱动角色，现在的viewController其实就是原来view的角色了
+
+还记得上篇文章 数据源怎么来的，viewController get到的，主要交代的是MVC布局关系，并没有涉及网络
+
+如果加上网络部分，上文中构建好的MVC模式轻易就会被搞乱，因为基础的架构设计部分约束性不强，不自律的人也很容慢穿透这个MVC设计，慢慢就丧失了它的框架职责
+
+可以把 [iOS架构设计（一）- MVC](https://juejin.cn/post/7112825508261265421) 中的ViewController核心代码在MVP模式下一样在ViewController补充完整 [代码](https://github.com/githubwbp1988/IFLArchitectureDesign)，操作之后你些许会发现别扭，如果有这样的感觉，那就相信这种感觉，带着这种感觉，一步步践行MVP的演化
+
+正文开始前，这里就是让大家感受下这个小小的区别，接下来再复杂
+
+
+
+# 带着感受，MVP再次调整
+
+你会发现上面的调整 与 MVC 大同小异，感觉很像，那没关系，接下来，就彻底清空上一步的mvp初始铺垫，再次重新开始
+
+这不是在浪费你的时间，前面的操作也是刻意的，这样做让大家心里能够装一些想当然的东西，然后打破它，再构建，过了很长时间以后，如果再考虑架构设计，你脑子里可能就会摒弃掉固有的东西，这样才会深刻起来
+
+
+## context
+
+context是为了不管在项目代码中什么位置，都能轻松获取到依赖
+
+> ![image.png](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/3322cd7602be403095f4787e818e9b9b~tplv-k3u1fbpfcp-watermark.image?)
+
+这种写法很怪，像是多此一举，不过要注意下当中的`weak`修饰
+
+> ![image.png](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/f39d276a37854296aeeb57e0543aad66~tplv-k3u1fbpfcp-watermark.image?)
+
+
+## baseViewController
+
+viewController 只会保留一些基本的关联桥接职能
+
+> ![image.png](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/74aef049b96946a59325ac5d3782d689~tplv-k3u1fbpfcp-watermark.image?)
+
+presenter interactor view 不仅仅是mvp思想传达，重要的是，要从代码构建类上，让开发者更容易的get到这个信息
+
+更有甚者，构建MVP这些基础代码可以通过执行脚本来自动生成，这样的话一个项目里，设计思想才会潜移默化的移植到潜意识里的规范手册里
+
+毕竟代码还是靠程序猿去实现的，每个人都能清楚的意会这个设计模式，并写出风格一样的代码，那对于项目团队而言，是有很多好处的，效率肯定是没得说，而且协作之间的耦合也会变得准确，在没有必要费心思的关键结点处就不需要花费太多的时间精力
+
+我理解的 架构不就是服务于开发组么 维护有合适的规范可依 职责也可通过代码变得很明晰 这些全都可以通过这样的一个架构轻松落实，就跟合同一样，清清楚楚
+
+
+## mvp架构模式下，viewController效果简单看下
+
+> ![image.png](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/3ffb0e7d9dca4c7fa2613e794d68df00~tplv-k3u1fbpfcp-watermark.image?)
+
+这就是效果
+
+注意前两行代码顺序
+
+> ![image.png](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/f937d2ecaa34403c80cf138ee9f127fe~tplv-k3u1fbpfcp-watermark.image?)
+
+调试代码 [github](https://github.com/githubwbp1988/IFLArchitectureDesign)
+
+
+presenter逻辑
+> ![image.png](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/acda44bb9cac4e5bae4d6b2fd749599a~tplv-k3u1fbpfcp-watermark.image?)
+
+presenter红框部分 就是基于代理来驱动的
+
+可能你阅读之后又个感觉，代码云里雾里的，但代码量却不多，这样弄值得吗
+
+非常值得！且耐心往后看
+
+
+# 从MVC迁移一些逻辑过来
+
+> ![image.png](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7641ac2abce244dab5aafbe989eaeb08~tplv-k3u1fbpfcp-watermark.image?)
+
+这是出现了一个新的概念，adapter，俗称适配器，如果看过了文章（一），会看到上半部分的逻辑有点像MVC里controller里的block回调
+
+这里我简单做个解释，说一下这样抽象的思想：
+
+- MVP是presenter基于代理驱动的，所以MVC中的controller就沦为配置层，可以理解为初始化配置的操作
+
+- view的数据渲染交给了适配器，preseter自会驱动适配器
+
+- 对view自身来讲，adapter也可以尝试去按照数据源的概念去理解
+
+- 按照稳重的MVP构想，执行项目的话就可以拷贝代码，按照相应的格式规则去编辑代码 文件 类，框架设计就好了，写代码会变得很轻松 大可以自己去下载代码在自己的项目里尝试一下
+
+adapter同样需要在context里追加注册
+
+> ![image.png](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/47c6fe944d15415eb740c3184688664a~tplv-k3u1fbpfcp-watermark.image?)
+
+
+# 还有一个特别的宏
+
+> ![image.png](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/8dd2c22bf975456bafd583ea38d6f4ef~tplv-k3u1fbpfcp-watermark.image?)
+
+> ![image.png](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e02a050a97594f9d85212f4afba160e3~tplv-k3u1fbpfcp-watermark.image?)
+
+这样处理的代码更直观，而且代码位置很明确，通过标准字符，读代码会变得相当有意思
+
+
+说实话，我也有点高估自己的表达了，这个MVP真心不好阐述，得依赖代码才能表达得清晰些，有可能会造成误解，但那不是我的本意
+
+
+[文中涉及mvp代码部分](https://github.com/githubwbp1988/IFLArchitectureDesign)
 
 

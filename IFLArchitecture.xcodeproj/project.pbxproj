@@ -37,6 +37,9 @@
 		204794962867115100D58560 /* IFLListPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 204794952867115100D58560 /* IFLListPresenter.m */; };
 		2047949B2867290800D58560 /* IFLBaseAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2047949A2867290800D58560 /* IFLBaseAdapter.m */; };
 		2047949E28672D7800D58560 /* IFLListInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2047949D28672D7800D58560 /* IFLListInteractor.m */; };
+		205EBEB828679F1700BD3EA7 /* IFLKVOViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 205EBEB728679F1700BD3EA7 /* IFLKVOViewController.m */; };
+		205EBEBB2867A6ED00BD3EA7 /* IFLKVOObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 205EBEBA2867A6ED00BD3EA7 /* IFLKVOObject.m */; };
+		205EBEBE2867A75700BD3EA7 /* NSObject+IFLKVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 205EBEBD2867A75700BD3EA7 /* NSObject+IFLKVO.m */; };
 		B4F53D49237063F1D2C1E079 /* Pods_IFLArchitecture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 132F2B336B90D7CA9E5B1ED5 /* Pods_IFLArchitecture.framework */; };
 /* End PBXBuildFile section */
 
@@ -103,6 +106,12 @@
 		2047949A2867290800D58560 /* IFLBaseAdapter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IFLBaseAdapter.m; sourceTree = "<group>"; };
 		2047949C28672D7800D58560 /* IFLListInteractor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFLListInteractor.h; sourceTree = "<group>"; };
 		2047949D28672D7800D58560 /* IFLListInteractor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IFLListInteractor.m; sourceTree = "<group>"; };
+		205EBEB628679F1700BD3EA7 /* IFLKVOViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFLKVOViewController.h; sourceTree = "<group>"; };
+		205EBEB728679F1700BD3EA7 /* IFLKVOViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IFLKVOViewController.m; sourceTree = "<group>"; };
+		205EBEB92867A6ED00BD3EA7 /* IFLKVOObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFLKVOObject.h; sourceTree = "<group>"; };
+		205EBEBA2867A6ED00BD3EA7 /* IFLKVOObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IFLKVOObject.m; sourceTree = "<group>"; };
+		205EBEBC2867A75700BD3EA7 /* NSObject+IFLKVO.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+IFLKVO.h"; sourceTree = "<group>"; };
+		205EBEBD2867A75700BD3EA7 /* NSObject+IFLKVO.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+IFLKVO.m"; sourceTree = "<group>"; };
 		8ACF6C0B04178F9D6E20BA18 /* Pods-IFLArchitecture.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IFLArchitecture.release.xcconfig"; path = "Target Support Files/Pods-IFLArchitecture/Pods-IFLArchitecture.release.xcconfig"; sourceTree = "<group>"; };
 		DAFF52EAC65E5E5F74CA6DAE /* Pods-IFLArchitecture.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IFLArchitecture.debug.xcconfig"; path = "Target Support Files/Pods-IFLArchitecture/Pods-IFLArchitecture.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -128,6 +137,15 @@
 			path = adapter;
 			sourceTree = "<group>";
 		};
+		203319D62867962A00F046E5 /* mvvm */ = {
+			isa = PBXGroup;
+			children = (
+				204794502864987E00D58560 /* IFLMVVMViewController.h */,
+				204794512864987E00D58560 /* IFLMVVMViewController.m */,
+			);
+			path = mvvm;
+			sourceTree = "<group>";
+		};
 		20479422286493E900D58560 = {
 			isa = PBXGroup;
 			children = (
@@ -149,6 +167,8 @@
 		2047942D286493E900D58560 /* IFLArchitecture */ = {
 			isa = PBXGroup;
 			children = (
+				205EBEB528679EF500BD3EA7 /* kvo */,
+				203319D62867962A00F046E5 /* mvvm */,
 				204794682866164C00D58560 /* net */,
 				2047946428660AB300D58560 /* mvp */,
 				2047946328660A5200D58560 /* mvc */,
@@ -163,8 +183,6 @@
 				2047943C286493EA00D58560 /* LaunchScreen.storyboard */,
 				2047943F286493EA00D58560 /* Info.plist */,
 				20479440286493EA00D58560 /* main.m */,
-				204794502864987E00D58560 /* IFLMVVMViewController.h */,
-				204794512864987E00D58560 /* IFLMVVMViewController.m */,
 			);
 			path = IFLArchitecture;
 			sourceTree = "<group>";
@@ -308,6 +326,19 @@
 			path = common;
 			sourceTree = "<group>";
 		};
+		205EBEB528679EF500BD3EA7 /* kvo */ = {
+			isa = PBXGroup;
+			children = (
+				205EBEB628679F1700BD3EA7 /* IFLKVOViewController.h */,
+				205EBEB728679F1700BD3EA7 /* IFLKVOViewController.m */,
+				205EBEB92867A6ED00BD3EA7 /* IFLKVOObject.h */,
+				205EBEBA2867A6ED00BD3EA7 /* IFLKVOObject.m */,
+				205EBEBC2867A75700BD3EA7 /* NSObject+IFLKVO.h */,
+				205EBEBD2867A75700BD3EA7 /* NSObject+IFLKVO.m */,
+			);
+			path = kvo;
+			sourceTree = "<group>";
+		};
 		98E4690804D7BC477AFD3025 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -447,10 +478,12 @@
 				2047945B2864B79A00D58560 /* IFLPresent.m in Sources */,
 				204794522864987E00D58560 /* IFLMVVMViewController.m in Sources */,
 				204794582864B70F00D58560 /* IFLCellModel.m in Sources */,
+				205EBEBE2867A75700BD3EA7 /* NSObject+IFLKVO.m in Sources */,
 				20479430286493E900D58560 /* AppDelegate.m in Sources */,
 				2047947928661C9600D58560 /* IFLMVPPresenter.m in Sources */,
 				203319D5286737D700F046E5 /* IFLListAdapter.m in Sources */,
 				2047944C2864985C00D58560 /* IFLMVCViewController.m in Sources */,
+				205EBEBB2867A6ED00BD3EA7 /* IFLKVOObject.m in Sources */,
 				20479441286493EA00D58560 /* main.m in Sources */,
 				204794722866164C00D58560 /* HttpPresenter.m in Sources */,
 				2047945F2864DAC000D58560 /* IFLDataSource.m in Sources */,
@@ -458,6 +491,7 @@
 				2047947F28661DEF00D58560 /* IFLMVPModel.m in Sources */,
 				2047944F2864986D00D58560 /* IFLMVPViewController.m in Sources */,
 				2047948A286639A900D58560 /* NSObject+IFLC.m in Sources */,
+				205EBEB828679F1700BD3EA7 /* IFLKVOViewController.m in Sources */,
 				20479433286493E900D58560 /* SceneDelegate.m in Sources */,
 				204794752866173000D58560 /* IFLPresenter.m in Sources */,
 				204794872866393300D58560 /* IFLContext.m in Sources */,
