@@ -40,6 +40,9 @@
 		205EBEB828679F1700BD3EA7 /* IFLKVOViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 205EBEB728679F1700BD3EA7 /* IFLKVOViewController.m */; };
 		205EBEBB2867A6ED00BD3EA7 /* IFLKVOObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 205EBEBA2867A6ED00BD3EA7 /* IFLKVOObject.m */; };
 		205EBEBE2867A75700BD3EA7 /* NSObject+IFLKVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 205EBEBD2867A75700BD3EA7 /* NSObject+IFLKVO.m */; };
+		205EBEC228686DE900BD3EA7 /* IFLKVCObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 205EBEC128686DE900BD3EA7 /* IFLKVCObject.m */; };
+		205EBEC52868724D00BD3EA7 /* IFLKVCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 205EBEC42868724D00BD3EA7 /* IFLKVCViewController.m */; };
+		205EBEC82868861700BD3EA7 /* NSObject+IFLKVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 205EBEC72868861700BD3EA7 /* NSObject+IFLKVC.m */; };
 		B4F53D49237063F1D2C1E079 /* Pods_IFLArchitecture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 132F2B336B90D7CA9E5B1ED5 /* Pods_IFLArchitecture.framework */; };
 /* End PBXBuildFile section */
 
@@ -112,6 +115,12 @@
 		205EBEBA2867A6ED00BD3EA7 /* IFLKVOObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IFLKVOObject.m; sourceTree = "<group>"; };
 		205EBEBC2867A75700BD3EA7 /* NSObject+IFLKVO.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+IFLKVO.h"; sourceTree = "<group>"; };
 		205EBEBD2867A75700BD3EA7 /* NSObject+IFLKVO.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+IFLKVO.m"; sourceTree = "<group>"; };
+		205EBEC028686DE900BD3EA7 /* IFLKVCObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFLKVCObject.h; sourceTree = "<group>"; };
+		205EBEC128686DE900BD3EA7 /* IFLKVCObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IFLKVCObject.m; sourceTree = "<group>"; };
+		205EBEC32868724D00BD3EA7 /* IFLKVCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFLKVCViewController.h; sourceTree = "<group>"; };
+		205EBEC42868724D00BD3EA7 /* IFLKVCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IFLKVCViewController.m; sourceTree = "<group>"; };
+		205EBEC62868861700BD3EA7 /* NSObject+IFLKVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+IFLKVC.h"; sourceTree = "<group>"; };
+		205EBEC72868861700BD3EA7 /* NSObject+IFLKVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+IFLKVC.m"; sourceTree = "<group>"; };
 		8ACF6C0B04178F9D6E20BA18 /* Pods-IFLArchitecture.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IFLArchitecture.release.xcconfig"; path = "Target Support Files/Pods-IFLArchitecture/Pods-IFLArchitecture.release.xcconfig"; sourceTree = "<group>"; };
 		DAFF52EAC65E5E5F74CA6DAE /* Pods-IFLArchitecture.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IFLArchitecture.debug.xcconfig"; path = "Target Support Files/Pods-IFLArchitecture/Pods-IFLArchitecture.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -167,6 +176,7 @@
 		2047942D286493E900D58560 /* IFLArchitecture */ = {
 			isa = PBXGroup;
 			children = (
+				205EBEBF28686DD700BD3EA7 /* kvc */,
 				205EBEB528679EF500BD3EA7 /* kvo */,
 				203319D62867962A00F046E5 /* mvvm */,
 				204794682866164C00D58560 /* net */,
@@ -339,6 +349,19 @@
 			path = kvo;
 			sourceTree = "<group>";
 		};
+		205EBEBF28686DD700BD3EA7 /* kvc */ = {
+			isa = PBXGroup;
+			children = (
+				205EBEC028686DE900BD3EA7 /* IFLKVCObject.h */,
+				205EBEC128686DE900BD3EA7 /* IFLKVCObject.m */,
+				205EBEC32868724D00BD3EA7 /* IFLKVCViewController.h */,
+				205EBEC42868724D00BD3EA7 /* IFLKVCViewController.m */,
+				205EBEC62868861700BD3EA7 /* NSObject+IFLKVC.h */,
+				205EBEC72868861700BD3EA7 /* NSObject+IFLKVC.m */,
+			);
+			path = kvc;
+			sourceTree = "<group>";
+		};
 		98E4690804D7BC477AFD3025 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -472,6 +495,8 @@
 			files = (
 				2047949328670A3C00D58560 /* IFLBasePresenter.m in Sources */,
 				204794702866164C00D58560 /* Reachability.m in Sources */,
+				205EBEC82868861700BD3EA7 /* NSObject+IFLKVC.m in Sources */,
+				205EBEC228686DE900BD3EA7 /* IFLKVCObject.m in Sources */,
 				20479436286493E900D58560 /* ViewController.m in Sources */,
 				20479490286709BF00D58560 /* IFLListView.m in Sources */,
 				204794962867115100D58560 /* IFLListPresenter.m in Sources */,
@@ -484,6 +509,7 @@
 				203319D5286737D700F046E5 /* IFLListAdapter.m in Sources */,
 				2047944C2864985C00D58560 /* IFLMVCViewController.m in Sources */,
 				205EBEBB2867A6ED00BD3EA7 /* IFLKVOObject.m in Sources */,
+				205EBEC52868724D00BD3EA7 /* IFLKVCViewController.m in Sources */,
 				20479441286493EA00D58560 /* main.m in Sources */,
 				204794722866164C00D58560 /* HttpPresenter.m in Sources */,
 				2047945F2864DAC000D58560 /* IFLDataSource.m in Sources */,
