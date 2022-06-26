@@ -20,9 +20,9 @@
 //}
 //
 //- (void)setName:(NSString *)name {
-//    [self willChangeValueForKey:@"name"];
+////    [self willChangeValueForKey:@"name"];
 //    _name = name;
-//    [self didChangeValueForKey:@"name"];
+////    [self didChangeValueForKey:@"name"];
 //}
 
 // 组合观察

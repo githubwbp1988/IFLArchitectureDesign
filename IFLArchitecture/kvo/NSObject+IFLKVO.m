@@ -36,8 +36,10 @@ static NSString *const iflKVOAssociateKey = @"IFLKVO_AssociateKey";
 
 
 - (void)ifl_performSetterSelector:(NSString *)keyPath {
+    Class superClass = object_getClass(self);
     SEL setterSelector = [self getSetterSelector:keyPath];
-    if ([self respondsToSelector:setterSelector]) {
+    Method setterMethod = class_getInstanceMethod(superClass, setterSelector);
+    if (!setterMethod) {
         @throw [NSException exceptionWithName:NSInvalidArgumentException reason:[NSString stringWithFormat:@"%@ does not exist", getSetterKey(keyPath)] userInfo:nil];
     }
 }
@@ -91,7 +93,9 @@ static void ifl_setter(id self, SEL _cmd, id newValue) {
 //observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context
     SEL observerSEL = @selector(ifl_observeValueForKeyPath:ofObject:change:context:);
     NSString *keyPath = getKeyPath(NSStringFromSelector(_cmd));
-    objc_msgSend(observer, observerSEL, keyPath, self, @{keyPath:newValue}, NULL);
+//    objc_msgSend(observer, observerSEL, keyPath, self, @{keyPath:newValue}, NULL);
+    void (*ifl_msgSend)(id, SEL, id, id, id, void *) = (void *)objc_msgSend;
+    ifl_msgSend(observer, observerSEL, keyPath, self, @{keyPath:newValue}, NULL);
 }
 
 
@@ -107,7 +111,7 @@ static void ifl_setter(id self, SEL _cmd, id newValue) {
 static NSString *getSetterKey(NSString *keyPath) {
     NSString *Key = [keyPath capitalizedString];
     
-    return [NSString stringWithFormat:@"set%@", Key];
+    return [NSString stringWithFormat:@"set%@:", Key];
 }
 
 static NSString *getKeyPath(NSString *setter) {

@@ -83,21 +83,21 @@ static void *KVOObjectMArray = &KVOObjectMArray;
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     self.mObj.name = [NSString stringWithFormat:@"%@+1", self.mObj.name];
-    self.mObj.address = [NSString stringWithFormat:@"%@+3", self.mObj.address];
-    self.mObj->nickName = [NSString stringWithFormat:@"%@+2", self.mObj->nickName];
-    
-    self.mObj.received += 1.0;
-    
-    
-//    [self.mObj.mArray addObject:@"ss.."];
-//    [[self.mObj mutableArrayValueForKey:@"mArray"] addObject:@"ss..."];
-    if (self.mObj.mArray.count > 10) {
-        [[self.mObj mutableArrayValueForKey:@"mArray"] replaceObjectAtIndex:5 withObject:@"5555----.."];
-    } else if (self.mObj.mArray.count > 3) {
-        [[self.mObj mutableArrayValueForKey:@"mArray"] insertObject:@"__11..." atIndex:0];
-    } else {
-        [[self.mObj mutableArrayValueForKey:@"mArray"] addObject:@"__122333ff1..."];
-    }
+//    self.mObj.address = [NSString stringWithFormat:@"%@+3", self.mObj.address];
+//    self.mObj->nickName = [NSString stringWithFormat:@"%@+2", self.mObj->nickName];
+//
+//    self.mObj.received += 1.0;
+//
+//
+////    [self.mObj.mArray addObject:@"ss.."];
+////    [[self.mObj mutableArrayValueForKey:@"mArray"] addObject:@"ss..."];
+//    if (self.mObj.mArray.count > 10) {
+//        [[self.mObj mutableArrayValueForKey:@"mArray"] replaceObjectAtIndex:5 withObject:@"5555----.."];
+//    } else if (self.mObj.mArray.count > 3) {
+//        [[self.mObj mutableArrayValueForKey:@"mArray"] insertObject:@"__11..." atIndex:0];
+//    } else {
+//        [[self.mObj mutableArrayValueForKey:@"mArray"] addObject:@"__122333ff1..."];
+//    }
 }
 
 - (void)printClasses:(Class)cls {
