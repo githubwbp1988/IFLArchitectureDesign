@@ -8,6 +8,7 @@
 #import "IFLKVOViewController.h"
 #import "IFLKVOObject.h"
 #import <objc/runtime.h>
+#import "IFLKVOObserverInfo.h"
 
 @interface IFLKVOViewController ()
 
@@ -37,6 +38,7 @@ static void *KVOObjectMArray = &KVOObjectMArray;
 //    [self.mObj addObserver:self forKeyPath:@"mArray" options:NSKeyValueObservingOptionNew context:KVOObjectMArray];
     
     [self.mObj ifl_addObserver:self forKeyPath:@"name" options:NSKeyValueObservingOptionNew context:KVOObjectName];
+    [self.mObj ifl_addObserver:self forKeyPath:@"address" options:IFLKeyValueObservingOptionNew|IFLKeyValueObservingOptionOld context:KVOObjectAddress];
     
     [self printClasses:[self.mObj class]];
     
@@ -63,27 +65,31 @@ static void *KVOObjectMArray = &KVOObjectMArray;
 //    }
 //}
 
-- (void)ifl_observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *, id> *)change context:(void *)context {
+- (void)ifl_observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey, id> *)change context:(void *)context {
     if ([keyPath isEqualToString:@"name"]) {
         NSLog(@"keyPath = %@, name = %@, %@", keyPath, ((IFLKVOObject *)object).name, change);
+    }
+    if ([keyPath isEqualToString:@"address"]) {
+        NSLog(@"keyPath = %@, address = %@, %@", keyPath, ((IFLKVOObject *)object).address, change);
     }
 }
 
 - (void)dealloc {
 //    [self.mObj removeObserver:self forKeyPath:@"name"];
     NSLog(@"%s", __func__);
-    NSLog(@" --- 移除观察者之前 self.mObj ----> %s", object_getClassName(self.mObj));
+//    NSLog(@" --- 移除观察者之前 self.mObj ----> %s", object_getClassName(self.mObj));
 //    [self.mObj removeObserver:self forKeyPath:@"name"];
 //    [self.mObj removeObserver:self forKeyPath:@"nickName"];
 //    [self.mObj removeObserver:self forKeyPath:@"address"];
 //    [self.mObj removeObserver:self forKeyPath:@"progress"];
 //    [self.mObj removeObserver:self forKeyPath:@"mArray"];
-    NSLog(@" --- 移除观察者之后  self.mObj ----> %s", object_getClassName(self.mObj));
+//    NSLog(@" --- 移除观察者之后  self.mObj ----> %s", object_getClassName(self.mObj));
+    // 自定义kvo实现 不需要remove observer处理
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     self.mObj.name = [NSString stringWithFormat:@"%@+1", self.mObj.name];
-//    self.mObj.address = [NSString stringWithFormat:@"%@+3", self.mObj.address];
+    self.mObj.address = [NSString stringWithFormat:@"%@+3", self.mObj.address];
 //    self.mObj->nickName = [NSString stringWithFormat:@"%@+2", self.mObj->nickName];
 //
 //    self.mObj.received += 1.0;

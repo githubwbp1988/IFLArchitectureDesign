@@ -15,7 +15,7 @@ static NSString *const iflKVOAssociateKey = @"IFLKVO_AssociateKey";
 
 - (void)ifl_addObserver:(nonnull NSObject *)observer
              forKeyPath:(nonnull NSString *)keyPath
-                options:(NSKeyValueObservingOptions)options
+                options:(IFLKeyValueObservingOptions)options
                 context:(nullable void *)context {
     // 1. 验证是否存在setter方法，
     [self ifl_performSetterSelector:keyPath];
@@ -24,13 +24,43 @@ static NSString *const iflKVOAssociateKey = @"IFLKVO_AssociateKey";
     // 3. isa指向 : IFLKVONotifying_IFLKVOObject
     object_setClass(self, newClass);
     // 4. 保存观察者
-    objc_setAssociatedObject(self, (__bridge const void * _Nonnull)(iflKVOAssociateKey), observer, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    // 需要注意的是 observer会存在循环引用, 如果需要使用关联对象存储的话，需要一个中间媒介 weak获取
+//    objc_setAssociatedObject(self, (__bridge const void * _Nonnull)(iflKVOAssociateKey), observer, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    NSMutableArray *mArray = objc_getAssociatedObject(self, (__bridge const void * _Nonnull)(iflKVOAssociateKey));
+    if (!mArray) {
+        mArray = [NSMutableArray arrayWithCapacity:1];
+    }
+    IFLKVOObserverInfo *observerInfo = [[IFLKVOObserverInfo alloc] initWitObserver:observer keyPath:keyPath options:options];
+    [mArray addObject:observerInfo];
+    objc_setAssociatedObject(self, (__bridge const void * _Nonnull)(iflKVOAssociateKey), mArray, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (void)removeObserver:(nonnull NSObject *)observer
-            forKeyPath:(nonnull NSString *)keyPath
-               context:(nullable void *)context {
+- (void)ifl_removeObserver:(nonnull NSObject *)observer
+                forKeyPath:(nonnull NSString *)keyPath
+                   context:(nullable void *)context {
     
+    NSMutableArray *mArray = objc_getAssociatedObject(self, (__bridge const void * _Nonnull)(iflKVOAssociateKey));
+    if (!mArray) {
+        return;
+    }
+    
+    for (IFLKVOObserverInfo *observerInfo in mArray) {
+        if ([observerInfo.keyPath isEqualToString:keyPath]) {
+            [mArray removeObject:observerInfo];
+            if (mArray.count > 0) {
+                objc_setAssociatedObject(self, (__bridge const void * _Nonnull)(iflKVOAssociateKey), mArray, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+            } else {
+                objc_removeAssociatedObjects(self);
+            }
+            break;
+        }
+    }
+    
+    if (mArray.count <= 0) {
+        // 指回给父类
+        Class superClass = [self class];
+        object_setClass(self, superClass);
+    }
 }
 
 
@@ -49,24 +79,27 @@ static NSString *const iflKVOAssociateKey = @"IFLKVO_AssociateKey";
     NSString *newClassName = [NSString stringWithFormat:@"%@%@", iflKVOPrefix, oldClassName];
     
     Class newClass = NSClassFromString(newClassName);
-    if (newClass) {
-        return newClass;
+    if (!newClass) {
+        // objc_allocateClassPair(Class _Nullable superclass, const char * _Nonnull name, size_t extraBytes)
+        newClass = objc_allocateClassPair([self class], newClassName.UTF8String, 0);
+        // objc_registerClassPair(Class _Nonnull cls)
+        objc_registerClassPair(newClass);
+        
+        SEL classSEL = NSSelectorFromString(@"class");
+        Method classMethod = class_getInstanceMethod([self class], classSEL);
+        const char *methodType = method_getTypeEncoding(classMethod);
+        class_addMethod(newClass, classSEL, (IMP)ifl_class, methodType);
     }
-    
-    // objc_allocateClassPair(Class _Nullable superclass, const char * _Nonnull name, size_t extraBytes)
-    newClass = objc_allocateClassPair([self class], newClassName.UTF8String, 0);
-    // objc_registerClassPair(Class _Nonnull cls)
-    objc_registerClassPair(newClass);
-    
-    SEL classSEL = NSSelectorFromString(@"class");
-    Method classMethod = class_getInstanceMethod([self class], classSEL);
-    const char *methodType = method_getTypeEncoding(classMethod);
-    class_addMethod(newClass, classSEL, (IMP)ifl_class, methodType);
     
     SEL setterSEL = NSSelectorFromString(getSetterKey(keyPath));
     Method setterMethod = class_getInstanceMethod([self class], setterSEL);
     const char *setterMethodType = method_getTypeEncoding(setterMethod);
     class_addMethod(newClass, setterSEL, (IMP)ifl_setter, setterMethodType);
+    
+    SEL deallocSEL = NSSelectorFromString(@"dealloc");
+    Method deallocMethod = class_getInstanceMethod([self class], deallocSEL);
+    const char *deallocMethodType = method_getTypeEncoding(deallocMethod);
+    class_addMethod(newClass, deallocSEL, (IMP)ifl_dealloc, deallocMethodType);
     
     
     return newClass;
@@ -79,6 +112,9 @@ Class ifl_class(id self, SEL _cmd) {
 static void ifl_setter(id self, SEL _cmd, id newValue) {
     NSLog(@"%s --- %@", __func__, newValue);
     
+    NSString *keyPath = getKeyPath(NSStringFromSelector(_cmd));
+    id oldValue       = [self valueForKey:keyPath];
+    
     // 消息转发
     void (*ifl_msgSendSuper)(void *, SEL, id) = (void *)objc_msgSendSuper;
     struct objc_super superStruct = {
@@ -88,14 +124,69 @@ static void ifl_setter(id self, SEL _cmd, id newValue) {
 //    objc_msgSendSuper(&superStruct, _cmd, newValue)
     ifl_msgSendSuper(&superStruct, _cmd, newValue);
     
-    id observer = objc_getAssociatedObject(self, (__bridge const void * _Nonnull)(iflKVOAssociateKey));
+//    id observer = objc_getAssociatedObject(self, (__bridge const void * _Nonnull)(iflKVOAssociateKey));
+//
+////observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context
+//    SEL observerSEL = @selector(ifl_observeValueForKeyPath:ofObject:change:context:);
+//    if (![observer respondsToSelector:observerSEL]) {
+//        return;
+//    }
+////    objc_msgSend(observer, observerSEL, keyPath, self, @{keyPath:newValue}, NULL);
+//    void (*ifl_msgSend)(id, SEL, id, id, id, void *) = (void *)objc_msgSend;
+//    ifl_msgSend(observer, observerSEL, keyPath, self, @{keyPath:newValue}, NULL);
     
-//observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context
-    SEL observerSEL = @selector(ifl_observeValueForKeyPath:ofObject:change:context:);
-    NSString *keyPath = getKeyPath(NSStringFromSelector(_cmd));
-//    objc_msgSend(observer, observerSEL, keyPath, self, @{keyPath:newValue}, NULL);
-    void (*ifl_msgSend)(id, SEL, id, id, id, void *) = (void *)objc_msgSend;
-    ifl_msgSend(observer, observerSEL, keyPath, self, @{keyPath:newValue}, NULL);
+    NSArray *mArray = objc_getAssociatedObject(self, (__bridge const void * _Nonnull)(iflKVOAssociateKey));
+    if (!mArray) {
+        return;
+    }
+    
+    for (IFLKVOObserverInfo *observerInfo in mArray) {
+        if ([observerInfo.keyPath isEqualToString:keyPath]) {
+            dispatch_async(dispatch_get_global_queue(0, 0), ^{
+                NSMutableDictionary<NSKeyValueChangeKey, id> *change = [NSMutableDictionary dictionaryWithCapacity:1];
+                if (observerInfo.options & IFLKeyValueObservingOptionNew) {
+                    // 新值处理
+                    [change setObject:newValue forKey:NSKeyValueChangeNewKey];
+                }
+                if (observerInfo.options & IFLKeyValueObservingOptionOld) {
+                    // 旧值处理
+                    [change setObject:@"" forKey:NSKeyValueChangeOldKey];
+                    if (oldValue) {
+                        [change setObject:oldValue forKey:NSKeyValueChangeOldKey];
+                    }
+                }
+                // 向观察者发送消息
+//                SEL observerSEL = @selector(lg_observeValueForKeyPath:ofObject:change:context:);
+//                objc_msgSend(info.observer,observerSEL,keyPath,self,change,NULL);
+                
+                SEL observerSEL = @selector(ifl_observeValueForKeyPath:ofObject:change:context:);
+                if ([observerInfo.observer respondsToSelector:observerSEL]) {
+                    //    objc_msgSend(observer, observerSEL, keyPath, self, @{keyPath:newValue}, NULL);
+                    void (*ifl_msgSend)(id, SEL, id, id, id, void *) = (void *)objc_msgSend;
+                    ifl_msgSend(observerInfo.observer, observerSEL, keyPath, self, change, NULL);
+                }
+                
+            });
+        }
+    }
+}
+
+static void ifl_dealloc(id self, SEL _cmd) {
+    NSLog(@" ---- %s ---", __func__);
+    
+    NSMutableArray *mArray = objc_getAssociatedObject(self, (__bridge const void * _Nonnull)(iflKVOAssociateKey));
+    if (mArray) {
+        for (IFLKVOObserverInfo *observerInfo in mArray) {
+            void (*ifl_msgSend)(id, SEL) = (void *)objc_msgSend;
+            ifl_msgSend(observerInfo.observer, _cmd);
+        }
+        [mArray removeAllObjects];
+        objc_removeAssociatedObjects(self);
+    }
+    
+    // 指回给父类
+    Class superClass = [self class];
+    object_setClass(self, superClass);
 }
 
 

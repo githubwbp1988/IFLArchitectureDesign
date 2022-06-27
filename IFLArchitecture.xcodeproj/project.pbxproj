@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2006FB022869787900C91F34 /* IFLKVOObserverInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 2006FB012869787900C91F34 /* IFLKVOObserverInfo.m */; };
 		203319D5286737D700F046E5 /* IFLListAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 203319D4286737D700F046E5 /* IFLListAdapter.m */; };
 		20479430286493E900D58560 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2047942F286493E900D58560 /* AppDelegate.m */; };
 		20479433286493E900D58560 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 20479432286493E900D58560 /* SceneDelegate.m */; };
@@ -48,6 +49,8 @@
 
 /* Begin PBXFileReference section */
 		132F2B336B90D7CA9E5B1ED5 /* Pods_IFLArchitecture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IFLArchitecture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2006FB002869787900C91F34 /* IFLKVOObserverInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFLKVOObserverInfo.h; sourceTree = "<group>"; };
+		2006FB012869787900C91F34 /* IFLKVOObserverInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IFLKVOObserverInfo.m; sourceTree = "<group>"; };
 		203319D3286737D700F046E5 /* IFLListAdapter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFLListAdapter.h; sourceTree = "<group>"; };
 		203319D4286737D700F046E5 /* IFLListAdapter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IFLListAdapter.m; sourceTree = "<group>"; };
 		2047942B286493E900D58560 /* IFLArchitecture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IFLArchitecture.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -343,6 +346,8 @@
 				205EBEB728679F1700BD3EA7 /* IFLKVOViewController.m */,
 				205EBEB92867A6ED00BD3EA7 /* IFLKVOObject.h */,
 				205EBEBA2867A6ED00BD3EA7 /* IFLKVOObject.m */,
+				2006FB002869787900C91F34 /* IFLKVOObserverInfo.h */,
+				2006FB012869787900C91F34 /* IFLKVOObserverInfo.m */,
 				205EBEBC2867A75700BD3EA7 /* NSObject+IFLKVO.h */,
 				205EBEBD2867A75700BD3EA7 /* NSObject+IFLKVO.m */,
 			);
@@ -519,6 +524,7 @@
 				2047948A286639A900D58560 /* NSObject+IFLC.m in Sources */,
 				205EBEB828679F1700BD3EA7 /* IFLKVOViewController.m in Sources */,
 				20479433286493E900D58560 /* SceneDelegate.m in Sources */,
+				2006FB022869787900C91F34 /* IFLKVOObserverInfo.m in Sources */,
 				204794752866173000D58560 /* IFLPresenter.m in Sources */,
 				204794872866393300D58560 /* IFLContext.m in Sources */,
 				20479483286638C900D58560 /* IFLBaseViewController.m in Sources */,

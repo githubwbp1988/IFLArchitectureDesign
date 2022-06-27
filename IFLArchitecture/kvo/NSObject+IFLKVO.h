@@ -6,6 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "IFLKVOObserverInfo.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -13,12 +14,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)ifl_addObserver:(nonnull NSObject *)observer
              forKeyPath:(nonnull NSString *)keyPath
-                options:(NSKeyValueObservingOptions)options
+                options:(IFLKeyValueObservingOptions)options
                 context:(nullable void *)context;
 
-- (void)removeObserver:(nonnull NSObject *)observer
-            forKeyPath:(nonnull NSString *)keyPath
-               context:(nullable void *)context;
+- (void)ifl_removeObserver:(nonnull NSObject *)observer
+                forKeyPath:(nonnull NSString *)keyPath
+                   context:(nullable void *)context;
 
 @end
 
