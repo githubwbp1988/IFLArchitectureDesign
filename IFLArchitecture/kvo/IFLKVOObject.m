@@ -45,4 +45,8 @@
     return [[NSString alloc] initWithFormat:@"%f",1.0f * self.received / self.total];
 }
 
+- (void)dealloc {
+    NSLog(@"%s", __func__);
+}
+
 @end

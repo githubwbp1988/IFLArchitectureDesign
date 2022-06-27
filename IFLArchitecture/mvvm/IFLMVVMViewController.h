@@ -5,11 +5,11 @@
 //  Created by erlich wang on 2022/6/23.
 //
 
-#import <UIKit/UIKit.h>
+#import "IFLBaseViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface IFLMVVMViewController : UIViewController
+@interface IFLMVVMViewController : IFLBaseViewController
 
 @end
 

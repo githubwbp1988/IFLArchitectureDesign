@@ -13,6 +13,51 @@ static NSString *const iflKVOAssociateKey = @"IFLKVO_AssociateKey";
 
 @implementation NSObject (IFLKVO)
 
+// 自动dealloc 方法一 动态特性 swizzle
++ (void)load {
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        [self ifl_hookOrigInstanceMenthod:NSSelectorFromString(@"dealloc") newInstanceMenthod:@selector(iflDealloc)];
+    });
+}
+
++ (BOOL)ifl_hookOrigInstanceMenthod:(SEL)oriSEL newInstanceMenthod:(SEL)swizzledSEL {
+    Class cls = self;
+    Method oriMethod = class_getInstanceMethod(cls, oriSEL);
+    Method swiMethod = class_getInstanceMethod(cls, swizzledSEL);
+    
+    if (!swiMethod) {
+        return NO;
+    }
+    if (!oriMethod) {
+        class_addMethod(cls, oriSEL, method_getImplementation(swiMethod), method_getTypeEncoding(swiMethod));
+        method_setImplementation(swiMethod, imp_implementationWithBlock(^(id self, SEL _cmd){ }));
+        return YES;
+    }
+    
+    BOOL didAddMethod = class_addMethod(cls, oriSEL, method_getImplementation(swiMethod), method_getTypeEncoding(swiMethod));
+    if (didAddMethod) {
+        class_replaceMethod(cls, swizzledSEL, method_getImplementation(oriMethod), method_getTypeEncoding(oriMethod));
+    } else {
+        method_exchangeImplementations(oriMethod, swiMethod);
+    }
+    return YES;
+}
+
+- (void)iflDealloc {
+    NSMutableArray *mArray = objc_getAssociatedObject(self, (__bridge const void * _Nonnull)(iflKVOAssociateKey));
+    if (mArray) {
+        [mArray removeAllObjects];
+        objc_removeAssociatedObjects(self);
+    }
+    
+    // 指回给父类
+    Class superClass = [self class];
+    object_setClass(self, superClass);
+    
+    [self iflDealloc];
+}
+
 - (void)ifl_addObserver:(nonnull NSObject *)observer
              forKeyPath:(nonnull NSString *)keyPath
                 options:(IFLKeyValueObservingOptions)options
@@ -96,10 +141,11 @@ static NSString *const iflKVOAssociateKey = @"IFLKVO_AssociateKey";
     const char *setterMethodType = method_getTypeEncoding(setterMethod);
     class_addMethod(newClass, setterSEL, (IMP)ifl_setter, setterMethodType);
     
-    SEL deallocSEL = NSSelectorFromString(@"dealloc");
-    Method deallocMethod = class_getInstanceMethod([self class], deallocSEL);
-    const char *deallocMethodType = method_getTypeEncoding(deallocMethod);
-    class_addMethod(newClass, deallocSEL, (IMP)ifl_dealloc, deallocMethodType);
+//    // 自动dealloc 方法二
+//    SEL deallocSEL = NSSelectorFromString(@"dealloc");
+//    Method deallocMethod = class_getInstanceMethod([self class], deallocSEL);
+//    const char *deallocMethodType = method_getTypeEncoding(deallocMethod);
+//    class_addMethod(newClass, deallocSEL, (IMP)ifl_dealloc, deallocMethodType);
     
     
     return newClass;
@@ -142,7 +188,7 @@ static void ifl_setter(id self, SEL _cmd, id newValue) {
     
     for (IFLKVOObserverInfo *observerInfo in mArray) {
         if ([observerInfo.keyPath isEqualToString:keyPath]) {
-            dispatch_async(dispatch_get_global_queue(0, 0), ^{
+//            dispatch_async(dispatch_get_global_queue(0, 0), ^{
                 NSMutableDictionary<NSKeyValueChangeKey, id> *change = [NSMutableDictionary dictionaryWithCapacity:1];
                 if (observerInfo.options & IFLKeyValueObservingOptionNew) {
                     // 新值处理
@@ -166,20 +212,16 @@ static void ifl_setter(id self, SEL _cmd, id newValue) {
                     ifl_msgSend(observerInfo.observer, observerSEL, keyPath, self, change, NULL);
                 }
                 
-            });
+//            });
         }
     }
 }
 
-static void ifl_dealloc(id self, SEL _cmd) {
+void ifl_dealloc(id self, SEL _cmd) {
     NSLog(@" ---- %s ---", __func__);
     
     NSMutableArray *mArray = objc_getAssociatedObject(self, (__bridge const void * _Nonnull)(iflKVOAssociateKey));
     if (mArray) {
-        for (IFLKVOObserverInfo *observerInfo in mArray) {
-            void (*ifl_msgSend)(id, SEL) = (void *)objc_msgSend;
-            ifl_msgSend(observerInfo.observer, _cmd);
-        }
         [mArray removeAllObjects];
         objc_removeAssociatedObjects(self);
     }
@@ -187,8 +229,12 @@ static void ifl_dealloc(id self, SEL _cmd) {
     // 指回给父类
     Class superClass = [self class];
     object_setClass(self, superClass);
+    
+    // crash 采用方式一 执行自动销毁
+//    void (* ifl_msgSend)(id, SEL) = (void *)objc_msgSend;
+//    ifl_msgSend(self, _cmd);
+    
 }
-
 
 
 - (SEL)getSetterSelector:(NSString *)keyPath {

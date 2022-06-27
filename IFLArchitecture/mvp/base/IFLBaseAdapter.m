@@ -44,6 +44,10 @@
     return _array.count;
 }
 
+- (void)needRefresh {
+    self.refresh = @"1";
+}
+
 #pragma mark UITableViewDataSource -
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [self dataCount];

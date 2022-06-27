@@ -6,6 +6,8 @@
 //
 
 #import "IFLMVVMViewController.h"
+#import "IFLList1Presenter.h"
+#import "IFLCommMacro.h"
 
 @interface IFLMVVMViewController ()
 
@@ -13,20 +15,23 @@
 
 @implementation IFLMVVMViewController
 
+
 - (void)viewDidLoad {
+    // 配置mvp
+    [self configMVP:@"list1" configAdapter:YES];
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     
+    IFL(self.context.view, IFLList1PresenterProtocol, createView);
+    
+    
+    
+    IFL(self.context.presenter, IFLList1PresenterProtocol, loadData:@"http://rap2api.taobao.org/app/mock/303994/test/dbbooklist");
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)dealloc {
+    NSLog(@"%s", __func__);
 }
-*/
+
 
 @end
