@@ -6,11 +6,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "IFLContext.h"
+#import "IFLBaseView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface IFLList1View : IFLCView
+@interface IFLList1View : IFLBaseView
 
 @end
 

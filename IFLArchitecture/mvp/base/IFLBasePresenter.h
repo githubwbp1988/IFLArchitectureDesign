@@ -11,6 +11,15 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@protocol IFLBasePresenterProtocol <NSObject>
+
+@optional
+// view
+- (void)createView;
+- (void)subscribe;
+
+@end
+
 @interface IFLBasePresenter : IFLCPresenter <HttpResponseHandle>
 
 @property (nonatomic, strong)HttpClient *httpClient;

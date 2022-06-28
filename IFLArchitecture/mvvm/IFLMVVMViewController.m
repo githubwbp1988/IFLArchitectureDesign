@@ -22,9 +22,8 @@
     [super viewDidLoad];
     
     IFL(self.context.view, IFLList1PresenterProtocol, createView);
-    
-    
-    
+    // 订阅
+    IFL(self.context.view, IFLList1PresenterProtocol, subscribe);
     IFL(self.context.presenter, IFLList1PresenterProtocol, loadData:@"http://rap2api.taobao.org/app/mock/303994/test/dbbooklist");
 }
 

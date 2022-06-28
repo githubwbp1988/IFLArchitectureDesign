@@ -8,7 +8,6 @@
 #import "IFLList1View.h"
 #import "IFLPlusCell.h"
 #import "IFLBaseAdapter.h"
-#import "NSObject+IFLKVO.h"
 
 @interface IFLList1View ()
 
@@ -18,7 +17,9 @@
 
 @implementation IFLList1View
 
+#pragma mark IFLBasePresenterProtocol -
 - (void)createView {
+    [super createView];
     NSString *reuseCellId = [NSString stringWithFormat:@"tableView:cellFor%@Dic:", [IFLCellModel class]];
     
     CGRect frame = self.bounds;
@@ -28,14 +29,6 @@
     [self.tableView registerClass:[IFLPlusCell class] forCellReuseIdentifier:reuseCellId];
     if (self.adapter) {
         _tableView.dataSource = (IFLBaseAdapter *)self.adapter;
-        
-        [self.adapter ifl_addObserver:self forKeyPath:@"refresh" options:IFLKeyValueObservingOptionNew context:NULL];
-    }
-}
-
-- (void)ifl_observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey, id> *)change context:(void *)context {
-    if ([keyPath isEqualToString:@"refresh"]) {
-        [self reload];
     }
 }
 

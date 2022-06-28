@@ -12,6 +12,7 @@
 		2006FB0A2869B79500C91F34 /* IFLList1View.m in Sources */ = {isa = PBXBuildFile; fileRef = 2006FB092869B79500C91F34 /* IFLList1View.m */; };
 		2006FB0E2869B86A00C91F34 /* IFLList1Adapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2006FB0D2869B86A00C91F34 /* IFLList1Adapter.m */; };
 		2006FB122869BCCE00C91F34 /* IFLList1Interactor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2006FB112869BCCE00C91F34 /* IFLList1Interactor.m */; };
+		2006FB15286AE7EC00C91F34 /* IFLBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2006FB14286AE7EC00C91F34 /* IFLBaseView.m */; };
 		203319D5286737D700F046E5 /* IFLListAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 203319D4286737D700F046E5 /* IFLListAdapter.m */; };
 		20479430286493E900D58560 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2047942F286493E900D58560 /* AppDelegate.m */; };
 		20479433286493E900D58560 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 20479432286493E900D58560 /* SceneDelegate.m */; };
@@ -63,6 +64,8 @@
 		2006FB0D2869B86A00C91F34 /* IFLList1Adapter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IFLList1Adapter.m; sourceTree = "<group>"; };
 		2006FB102869BCCE00C91F34 /* IFLList1Interactor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFLList1Interactor.h; sourceTree = "<group>"; };
 		2006FB112869BCCE00C91F34 /* IFLList1Interactor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IFLList1Interactor.m; sourceTree = "<group>"; };
+		2006FB13286AE7EC00C91F34 /* IFLBaseView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFLBaseView.h; sourceTree = "<group>"; };
+		2006FB14286AE7EC00C91F34 /* IFLBaseView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IFLBaseView.m; sourceTree = "<group>"; };
 		203319D3286737D700F046E5 /* IFLListAdapter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFLListAdapter.h; sourceTree = "<group>"; };
 		203319D4286737D700F046E5 /* IFLListAdapter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IFLListAdapter.m; sourceTree = "<group>"; };
 		2047942B286493E900D58560 /* IFLArchitecture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IFLArchitecture.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -340,6 +343,8 @@
 				2047949228670A3C00D58560 /* IFLBasePresenter.m */,
 				204794992867290800D58560 /* IFLBaseAdapter.h */,
 				2047949A2867290800D58560 /* IFLBaseAdapter.m */,
+				2006FB13286AE7EC00C91F34 /* IFLBaseView.h */,
+				2006FB14286AE7EC00C91F34 /* IFLBaseView.m */,
 			);
 			path = base;
 			sourceTree = "<group>";
@@ -586,6 +591,7 @@
 				204794622865EBD900D58560 /* IFLView.m in Sources */,
 				2006FB122869BCCE00C91F34 /* IFLList1Interactor.m in Sources */,
 				2047949B2867290800D58560 /* IFLBaseAdapter.m in Sources */,
+				2006FB15286AE7EC00C91F34 /* IFLBaseView.m in Sources */,
 				204794712866164C00D58560 /* HttpClient.m in Sources */,
 				204794552864AE5800D58560 /* IFLPlusCell.m in Sources */,
 			);

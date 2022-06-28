@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@protocol IFLList1PresenterProtocol <NSObject>
+@protocol IFLList1PresenterProtocol <IFLBasePresenterProtocol>
 
 @optional
 // presenter
@@ -20,9 +20,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 // adapter 回调
 - (void)loadDataSuccess:(NSArray *)modelArray;
-
-// view
-- (void)createView;
 
 @end
 
