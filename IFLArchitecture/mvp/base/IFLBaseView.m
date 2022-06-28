@@ -6,6 +6,7 @@
 //
 
 #import "IFLBaseView.h"
+#import "IFLCommMacro.h"
 
 @interface IFLBaseView ()
 
@@ -21,6 +22,7 @@
 - (void)subscribe {
     if (self.adapter) {
         [self.adapter ifl_addObserver:self forKeyPath:@"refresh" options:IFLKeyValueObservingOptionNew context:NULL];
+        [self.adapter ifl_addObserver:self forKeyPath:@"bustype" options:IFLKeyValueObservingOptionNew context:NULL];
     }
 }
 
@@ -28,6 +30,13 @@
     if ([keyPath isEqualToString:@"refresh"]) {
         if ([self respondsToSelector:@selector(reload)]) {
             [self performSelector:@selector(reload)];
+        }
+    }
+    NSLog(@"chage = %@", change);
+    if ([keyPath isEqualToString:@"bustype"]) {
+        if ([self respondsToSelector:@selector(processBusType:)]) {
+            NSNumber *number = change[NSKeyValueChangeNewKey];
+            [self performSelector:@selector(processBusType:) withObject:number];
         }
     }
 }

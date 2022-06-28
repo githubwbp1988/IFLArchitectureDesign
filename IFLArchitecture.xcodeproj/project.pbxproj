@@ -339,12 +339,12 @@
 			children = (
 				20479481286638C900D58560 /* IFLBaseViewController.h */,
 				20479482286638C900D58560 /* IFLBaseViewController.m */,
+				2006FB13286AE7EC00C91F34 /* IFLBaseView.h */,
+				2006FB14286AE7EC00C91F34 /* IFLBaseView.m */,
 				2047949128670A3C00D58560 /* IFLBasePresenter.h */,
 				2047949228670A3C00D58560 /* IFLBasePresenter.m */,
 				204794992867290800D58560 /* IFLBaseAdapter.h */,
 				2047949A2867290800D58560 /* IFLBaseAdapter.m */,
-				2006FB13286AE7EC00C91F34 /* IFLBaseView.h */,
-				2006FB14286AE7EC00C91F34 /* IFLBaseView.m */,
 			);
 			path = base;
 			sourceTree = "<group>";

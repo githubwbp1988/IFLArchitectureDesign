@@ -15,11 +15,13 @@ typedef void (^ConfigCellBlock)(id cell, id model, NSIndexPath *indexPath);
 
 @property(nonatomic, copy)ConfigCellBlock configCellBlock;
 @property(nonatomic, strong)NSString *refresh;
+@property(nonatomic, strong)NSNumber *bustype;
 
 - (void)configData:(NSArray *)modelArray;
 - (id)getModel:(NSInteger)index;
 - (NSInteger)dataCount;
 - (void)needRefresh;
+- (void)needCustomRefresh:(NSNumber *)bustype;
 
 @end
 

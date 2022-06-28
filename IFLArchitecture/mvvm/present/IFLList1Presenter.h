@@ -15,7 +15,6 @@ NS_ASSUME_NONNULL_BEGIN
 @optional
 // presenter
 - (void)loadData:(NSString *)urlString;
-- (void)dataUpdate;
 - (int)operate:(int)opt indexPath:(NSIndexPath *)indexPath;
 
 // adapter 回调

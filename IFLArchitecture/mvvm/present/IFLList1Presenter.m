@@ -10,6 +10,7 @@
 #import "IFLMVPModel.h"
 #import "IFLCellModel.h"
 #import "YYModel.h"
+#import "IFLCommMacro.h"
 
 @interface IFLList1Presenter ()
 

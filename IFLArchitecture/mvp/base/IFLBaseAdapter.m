@@ -47,6 +47,9 @@
 - (void)needRefresh {
     self.refresh = @"1";
 }
+- (void)needCustomRefresh:(NSNumber *)bustype {
+    self.bustype = bustype;
+}
 
 #pragma mark UITableViewDataSource -
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

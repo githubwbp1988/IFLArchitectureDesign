@@ -8,6 +8,7 @@
 #import "IFLList1View.h"
 #import "IFLPlusCell.h"
 #import "IFLBaseAdapter.h"
+#import "IFLCommMacro.h"
 
 @interface IFLList1View ()
 
@@ -34,6 +35,43 @@
 
 - (void)reload {
     [self.tableView reloadData];
+}
+
+- (void)processBusType:(NSNumber *)type {
+    switch (type.unsignedLongValue) {
+        case IFLViewSubscribeViewModuleBusType0:
+            
+            break;
+        case IFLViewSubscribeViewModuleBusType1:
+            
+            break;
+        case IFLViewSubscribeViewModuleBusType2:
+            
+            break;
+        case IFLViewSubscribeViewModuleBusType3:
+            
+            break;
+        case IFLViewSubscribeViewModuleBusType4:
+            
+            break;
+        case IFLViewSubscribeViewModuleBusType5:
+            
+            break;
+        case IFLViewSubscribeViewModuleBusType6:
+            
+            break;
+        case IFLViewSubscribeViewModuleBusType7:
+            
+            break;
+        case IFLViewSubscribeViewModuleBusType8:
+            
+            break;
+        case IFLViewSubscribeViewModuleBusType9:
+            
+            break;
+        default:
+            break;
+    }
 }
 
 @end

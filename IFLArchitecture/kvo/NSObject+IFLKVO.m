@@ -13,13 +13,13 @@ static NSString *const iflKVOAssociateKey = @"IFLKVO_AssociateKey";
 
 @implementation NSObject (IFLKVO)
 
-// 自动dealloc 方法一 动态特性 swizzle
-+ (void)load {
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        [self ifl_hookOrigInstanceMenthod:NSSelectorFromString(@"dealloc") newInstanceMenthod:@selector(iflDealloc)];
-    });
-}
+//// 自动dealloc 方法一 动态特性 swizzle
+//+ (void)load {
+//    static dispatch_once_t onceToken;
+//    dispatch_once(&onceToken, ^{
+//        [self ifl_hookOrigInstanceMenthod:NSSelectorFromString(@"dealloc") newInstanceMenthod:@selector(iflDealloc)];
+//    });
+//}
 
 + (BOOL)ifl_hookOrigInstanceMenthod:(SEL)oriSEL newInstanceMenthod:(SEL)swizzledSEL {
     Class cls = self;
@@ -111,7 +111,7 @@ static NSString *const iflKVOAssociateKey = @"IFLKVO_AssociateKey";
 
 
 - (void)ifl_performSetterSelector:(NSString *)keyPath {
-    Class superClass = object_getClass(self);
+    Class superClass = [self class];
     SEL setterSelector = [self getSetterSelector:keyPath];
     Method setterMethod = class_getInstanceMethod(superClass, setterSelector);
     if (!setterMethod) {
@@ -217,7 +217,7 @@ static void ifl_setter(id self, SEL _cmd, id newValue) {
     }
 }
 
-void ifl_dealloc(id self, SEL _cmd) {
+static void ifl_dealloc(id self, SEL _cmd) {
     NSLog(@" ---- %s ---", __func__);
     
     NSMutableArray *mArray = objc_getAssociatedObject(self, (__bridge const void * _Nonnull)(iflKVOAssociateKey));
@@ -230,10 +230,11 @@ void ifl_dealloc(id self, SEL _cmd) {
     Class superClass = [self class];
     object_setClass(self, superClass);
     
-    // crash 采用方式一 执行自动销毁
-//    void (* ifl_msgSend)(id, SEL) = (void *)objc_msgSend;
-//    ifl_msgSend(self, _cmd);
+    // [self performSelector:NSSelectorFromString(@"dealloc")];
     
+    //
+    void (* ifl_msgSend)(id, SEL) = (void *)objc_msgSend;
+    ifl_msgSend(self, _cmd);
 }
 
 

@@ -18,6 +18,10 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)createView;
 - (void)subscribe;
 
+// adapter
+- (void)dataUpdate;
+- (void)reRender:(NSNumber *)bustype;
+
 @end
 
 @interface IFLBasePresenter : IFLCPresenter <HttpResponseHandle>

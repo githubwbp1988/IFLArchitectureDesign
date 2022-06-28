@@ -31,6 +31,10 @@
     [self needRefresh];
 }
 
+- (void)reRender:(NSNumber *)bustype {
+    [self needCustomRefresh:bustype];
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForIFLCellModelDic:(NSDictionary *)dic {
     id model = dic[@"cellModel"];
     NSIndexPath *indexPath = dic[@"indexPath"];
